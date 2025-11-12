@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+python-multipart
+aiofiles
+openai-whisper
+pydantic
+torch
+torchvision
