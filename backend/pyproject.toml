@@ -10,5 +10,7 @@ dependencies = [
     "openai-whisper",
     "python-multipart",
     "aiofiles",
-    "pydantic"
+    "pydantic",
+    "manim",
+    "ffmpeg"
 ]

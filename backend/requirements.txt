@@ -6,3 +6,5 @@ openai-whisper
 pydantic
 torch
 torchvision
+manim
+ffmpeg
