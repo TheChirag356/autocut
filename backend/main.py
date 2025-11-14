@@ -3,7 +3,7 @@ import uuid
 import shutil
 from pathlib import Path
 from typing import Dict, Any
-
+import modules.diarization
 import aiofiles
 import whisper
 from fastapi import FastAPI, File, UploadFile, HTTPException, BackgroundTasks
@@ -182,3 +182,13 @@ def get_transcript(task_id: str):
     with open(summary_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     return data
+
+if __name__ == "__main__":
+    media_path = input("Enter path to your audio/video file: ").strip()
+
+    if not os.path.isfile(media_path):
+        print("File not found. Check the path.")
+        raise SystemExit
+
+    print(f"[*] Selected: {media_path}")
+    transcript = modules.diarization.transcribe_media(media_path)
